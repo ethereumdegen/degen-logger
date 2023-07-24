@@ -1,5 +1,8 @@
 [package]
 name = "degen-logger"
+description = "Decent console logging for rust"
+license = "MIT"
+repository="https://github.com/ethereumdegen/degen-logging"
 version = "0.1.0"
 edition = "2021"
 
