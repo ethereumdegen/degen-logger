@@ -5,9 +5,14 @@
 
 Logging utility for rust console 
 
+
+```
+cargo add degen-logger 
+```
+
 ## Overview 
 
-Sick and tired of constantly editing your println!() statements in your code?  Degen Logger is here to save you.  Simple define a custom enum in your code like this (probably off in some library/util folder) : 
+Sick and tired of constantly editing your println!() statements in your code?  Degen Logger is here to save you.  Simply define a custom enum in your code like this (probably off in some library/util folder) : 
 
 ```
 
