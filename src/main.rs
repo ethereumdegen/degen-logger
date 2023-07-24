@@ -1,7 +1,8 @@
 
 
 
-mod degenlogger;
+
+use degen_logger;
 
 
 
@@ -14,7 +15,7 @@ enum CustomLogStyle {
 } 
 
 
-impl degenlogger::DegenLogStyle for CustomLogStyle {
+impl degen_logger::DegenLogStyle for CustomLogStyle {
     
     fn bold(&self) -> bool {
         match self {
@@ -32,13 +33,13 @@ impl degenlogger::DegenLogStyle for CustomLogStyle {
         }
     }
     
-    fn get_log_color( &self ) -> degenlogger::LogColor {
+    fn get_log_color( &self ) -> degen_logger::LogColor {
        
          
           match self {
-            Self::Warn =>   degenlogger::LogColor::Blue ,
-            Self::Error =>   degenlogger::LogColor::Red ,
-            Self::Hidden =>   degenlogger::LogColor::Black 
+            Self::Warn =>   degen_logger::LogColor::Blue ,
+            Self::Error =>   degen_logger::LogColor::Red ,
+            Self::Hidden =>   degen_logger::LogColor::Black 
         }
      }
     
@@ -49,10 +50,13 @@ fn main() {
    
     
     
-    degenlogger::log(  "hello world", CustomLogStyle::Warn  );
+    degen_logger::log(   format!("Listening on: {}", "localhost".to_string()), CustomLogStyle::Warn  );
     
-    degenlogger::log(  "foo bar", CustomLogStyle::Error  );
     
-     degenlogger::log(  "this is hidden now ", CustomLogStyle::Hidden  );
+    degen_logger::log_str(  "hello world", CustomLogStyle::Warn  );
+    
+    degen_logger::log_str(  "foo bar", CustomLogStyle::Error  );
+    
+     degen_logger::log_str(  "this is hidden now ", CustomLogStyle::Hidden  );
     
 }
